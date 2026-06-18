@@ -34,7 +34,7 @@ public class FormCreaCorso {
         AnnoAccademicoCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(AnnoAccademicoCheckBox.isSelected()) AutoGeneraAnnoAccademico = true;
+                AutoGeneraAnnoAccademico = AnnoAccademicoCheckBox.isSelected();
             }
         });
 

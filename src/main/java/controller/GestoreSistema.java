@@ -35,7 +35,8 @@ public class GestoreSistema {
 		currentUtente = trovato;
 		if(trovato instanceof Docente)return 1;
 		else if(trovato instanceof Studente)return 2;
-		return 0;}
+		return 0;
+	}
 
 
 	//Creazione Corso--UC03
@@ -128,12 +129,15 @@ public class GestoreSistema {
     }
 
     private int checkMail(String mail, String ruolo){
-		long count = mail.chars().filter(c -> c == '@').count();//controlla quante @ ci sono nella mail
-         if(catUt.trovaUtente(mail)==true)return 0;//controlla che la mail non sia duplicata, se lo è, restituisce subito false
-		if (count!=1) return 0;
-			else if(mail.endsWith("@studenti.unina.it") && ruolo.equals("Studente")) return 1;
-				else if(mail.endsWith("@docenti.unina.it")&& ruolo.equals("Docente")) return 1;
-        else return 0;
+		long count = mail.chars().filter(c -> c == '@').count();
+		// 1) controlli sintattici (nessun accesso al DB)
+		if (count != 1) return 0;
+		boolean dominioOk = (mail.endsWith("@studenti.unina.it") && ruolo.equals("Studente"))
+				|| (mail.endsWith("@docenti.unina.it")  && ruolo.equals("Docente"));
+		if (!dominioOk) return 0;
+		// 2) solo se la mail è ben formata, interroga il DB per l'unicità
+		if (catUt.trovaUtente(mail)) return 0;
+		return 1;
     }
 
 	public void eliminaUtente(String mail, String nome, String cognome, String password, String Ruolo){
@@ -160,7 +164,7 @@ public class GestoreSistema {
 			//ParseInt qui è safe perchè per Short Circuit evaluation se arrivo a quel punto della condizione ho già superato ValidaDati(codice) che controlla sia un numero
 			return 2; // 2 = Errore codice
 
-		
+
 		/*if (anno != null && !anno.trim().isEmpty()) {
 			if (!anno.matches("\\d{4}/\\d{4}")) {
 				return 3; // 3 = Errore formato anno
