@@ -160,8 +160,7 @@ public class GestoreSistema {
 			//ParseInt qui è safe perchè per Short Circuit evaluation se arrivo a quel punto della condizione ho già superato ValidaDati(codice) che controlla sia un numero
 			return 2; // 2 = Errore codice
 
-
-		// Controllo Anno: è opzionale (può essere vuoto), ma se c'è deve rispettare il formato YYYY/YYYY
+		
 		/*if (anno != null && !anno.trim().isEmpty()) {
 			if (!anno.matches("\\d{4}/\\d{4}")) {
 				return 3; // 3 = Errore formato anno

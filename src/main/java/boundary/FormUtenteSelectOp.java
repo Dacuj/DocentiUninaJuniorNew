@@ -46,8 +46,7 @@ public class FormUtenteSelectOp {
                 else {
 
                     /*
-                     * Se la finestra è già aperta, non ne creiamo una nuova.
-                     * Portiamo semplicemente in primo piano quella esistente.
+                     * Se la finestra è già aperta, non ne creiamo una nuova portiamo semplicemente in primo piano quella esistente.
                      */
                     frameLogin.toFront();
                     frameLogin.requestFocus();
