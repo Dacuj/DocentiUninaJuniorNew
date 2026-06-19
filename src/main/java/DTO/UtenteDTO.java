@@ -1,4 +1,4 @@
-package database.DTO;
+package DTO;
 
 import entity.Utente;
 

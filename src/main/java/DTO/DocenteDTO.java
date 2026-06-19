@@ -1,4 +1,4 @@
-package database.DTO;
+package DTO;
 import entity.Corso;
 import entity.Docente;
 import java.util.ArrayList;

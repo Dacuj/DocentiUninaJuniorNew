@@ -1,4 +1,4 @@
-package database.DTO;
+package DTO;
 import entity.Materiale;
 import entity.Categoria;
 import java.time.LocalDate;

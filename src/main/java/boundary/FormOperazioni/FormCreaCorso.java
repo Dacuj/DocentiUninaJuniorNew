@@ -4,7 +4,7 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import controller.GestoreSistema;
-import database.DTO.CorsoDTO;
+import DTO.CorsoDTO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;

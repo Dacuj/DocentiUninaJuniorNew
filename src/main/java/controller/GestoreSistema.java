@@ -1,5 +1,8 @@
 package controller;
-import database.DTO.*;
+import DTO.CorsoDTO;
+import DTO.DocenteDTO;
+import DTO.StudenteDTO;
+import DTO.UtenteDTO;
 import entity.*;
 
 import java.util.ArrayList;

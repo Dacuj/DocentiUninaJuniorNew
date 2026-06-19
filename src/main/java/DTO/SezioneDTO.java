@@ -1,4 +1,4 @@
-package database.DTO;
+package DTO;
 
 import entity.Sezione;
 import entity.Materiale;
