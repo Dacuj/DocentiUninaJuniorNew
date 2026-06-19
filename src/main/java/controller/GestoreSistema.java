@@ -56,14 +56,9 @@ public class GestoreSistema {
 	//iscrizione autonoma UC05
 	public int IscrivitiaCorso(int codice) {
 		Studente stud = (Studente) currentUtente;
-		StudenteDTO studd = new StudenteDTO(stud);
 		Corso c = catCo.trovaCorso(codice);
 			if(c != null){
 				if (!StudenteIsIscritto(c, stud)){
-					if (studd.getListaCorsiStudente().contains("Al momento non sei iscritto ad alcun corso")){
-						studd.getListaCorsiStudente().remove("Al momento non sei iscritto ad alcun corso");
-					}
-
 					catCo.aggiungiIscritto(stud, c);
 					aggiornaListaCorsiUtente(c, stud);
 					return 0;}//studente iscritto
